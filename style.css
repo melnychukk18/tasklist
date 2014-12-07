@@ -1,0 +1,163 @@
+body{
+	font-family: 'Open Sans';
+	font-weight: 300;
+}
+.main{
+	padding-top: 20px;
+	background: #fff;
+  	-moz-box-shadow:    1px 1px 5px 1px #ccc;
+  	-webkit-box-shadow: 1px 1px 5px 1px #ccc;
+  	box-shadow:         1px 1px 5px 1px #ccc;
+}
+
+
+input[type="text"]{
+	width: 100%;
+	padding: 10px 20px;
+	border: 1px solid #eee;
+}
+
+.hidden{
+	display: none;
+}
+
+.label-img{
+	width: 15px;
+
+}
+label{
+	width: 100%;
+	margin: 0;
+}
+.imp-ul label{
+	font-family: 'Open Sans';
+	font-weight: 300;
+	font-size: 11px;
+	text-align: center;
+}
+.imp-ul img{
+	display: block;
+	width: 10px;
+	position: absolute;
+	top: 9px;
+	left: 5.5px;
+}
+.color-box{
+	display: block;
+	width: 100%;
+	height: 30px;
+	background: #eee;
+	text-align: center;
+	padding-top: 1px; 
+	border: 2px solid white;
+}
+ul{
+	margin: 20px 0;
+	padding: 0;
+	clear: both;
+}
+li{
+	list-style: none;
+	display: inline-block;
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+.color-ul li{
+	width: 20%;
+
+}
+.imp-ul li{
+	width: 33.3333333333%;
+}
+
+
+.importance-block{
+	border: 1px solid #eee;
+	height: 30px;
+	position: relative;
+	padding-top: 6px;
+}
+
+.add_form{
+	margin: 20px 0 20px 0;
+	border-bottom: 1px solid #eee;
+	padding-bottom: 10px; 
+}
+.add_form button{
+	background: #fff;
+	border-radius: none;
+	border: 1px solid #eee;
+}
+.tasks{
+
+	margin: 20px 0;
+}
+.task{
+	width: 100%;
+	padding: 10px 0 10px 10px;
+	position: relative;
+	margin: 4px 0;
+	font-size: 18px;
+	color: #959595;
+}
+@media screen and (max-width: 300px) {
+    .task {
+		font-size: 15px;
+    }
+}
+.buttons{
+	position: absolute;
+	right: 0px;
+	top: 0px;
+}
+.buttons button{
+	border-radius: none;
+	border: none;
+	height: 100%;
+	padding: 9px 10px;
+	margin: 0;
+	display: block;
+	float: left;
+	color: white;
+}
+.btn_done{
+	background: #95f5d4;
+
+}
+.btn_return{
+	background: #eccd6a;
+}
+.btn_delete{
+	background: #ec626d;
+}
+.color-box-red{
+	background: #db3340;
+}
+.color-box-orange{
+	background: #e8b71a;
+}
+.color-box-pink{
+	background: pink;
+}
+.color-box-green{
+	background: #1fda9a;
+}
+.color-box-blue{
+	background: #28abe3;
+}
+.red{
+	border-left: 4px solid #db3340;
+}
+.orange{
+	border-left: 4px solid #e8b71a;
+}
+.pink{
+	border-left: 4px solid pink;
+}
+.green{
+	border-left: 4px solid #1fda9a;
+}
+.blue{
+	border-left: 4px solid #28abe3;
+}

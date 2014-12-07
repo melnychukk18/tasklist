@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='toDo'>
+	<head>
+		<meta charset="UTF-8">
+		<title>Angular jump-start</title>
+		<link rel="stylesheet" href="bootstrap.min.css">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="style.css">
+		<script src="angular.min.js"></script>
+		<script src="main.js"></script>
+	</head>
+	<body ng-controller="toDoController">
+		<div class="container">
+			<div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1 col-xs-12 main">
+				<input type="text" ng-model="task" placeholder="Type your task here" ng-click="show_add()">
+				<div ng-show="addShow" class="add_form">
+				<ul class="imp-ul">
+					<li>
+						<label for="one">
+							<div class="importance-block">
+								<img src="img/select2.png" alt="" ng-if="imp==3">
+								not important
+							</div>
+							<input type="radio" name="importance" value=3 ng-model="imp" id="one" class="hidden">
+						</label>
+					</li>
+					<li>
+						<label for="two">
+							<div class="importance-block">
+								<img src="img/select2.png" alt="" ng-if="imp==2">
+								important
+							</div>
+							<input type="radio" name="importance" value=2 ng-model="imp" id="two" class="hidden">
+						</label>
+					</li>
+					<li>
+						<label for="three">
+							<div class="importance-block">
+								<img src="img/select2.png" alt="" ng-if="imp==1">
+								very important
+							</div>
+							<input type="radio" name="importance" value=1 ng-model="imp" id="three" class="hidden">
+						</label>
+					</li>
+				</ul>
+				<ul class="color-ul">
+					<li>
+						<label for="red">
+							<div class="color-box color-box-red">
+								<img src="img/select.png" alt="" class="label-img" ng-if="color=='red'">
+							</div>
+							<input type="radio" id="red" name="color" class="hidden" ng-model="color" value="red">
+						</label>
+					</li>
+					<li>
+						<label for="orange">
+							<div class="color-box color-box-orange">
+								<img src="img/select.png" alt="" class="label-img" ng-if="color=='orange'">
+							</div>
+							<input type="radio" id="orange" name="color" class="hidden" ng-model="color" value="orange">
+						</label>
+					</li>
+					<li>
+						<label for="pink">
+							<div class="color-box color-box-pink">
+								<img src="img/select.png" alt="" class="label-img" ng-if="color=='pink'">
+							</div>
+							<input type="radio" id="pink" name="color" class="hidden" ng-model="color" value="pink">
+						</label>
+					</li>
+					<li>
+						<label for="green">
+							<div class="color-box color-box-green">
+								<img src="img/select.png" alt="" class="label-img" ng-if="color=='green'">
+							</div>
+							<input type="radio" id="green" name="color" class="hidden" ng-model="color" value="green">
+						</label>
+					</li>
+					<li>
+						<label for="blue">
+							<div class="color-box color-box-blue">
+								<img src="img/select.png" alt="" class="label-img" ng-if="color=='blue'">
+							</div>
+							<input type="radio" id="blue" name="color" class="hidden" ng-model="color" value="blue">
+						</label>
+					</li>
+				</ul>
+				<br><br>
+				<button ng-click="create_task()">Add</button>
+				<button ng-click="close_add_form()">Close</button>
+				</div>
+				<div class="tasks">
+				<div ng-repeat="i in tasks | orderBy:'importance'" ng-if="i.done==false" ng-class="i.color" class="task">
+					{{i.text}}
+					<div class="buttons"><button ng-click="done_task(i.id)" class="btn_done"> done</button></div>
+				</div>
+				<hr>
+				<div ng-repeat="i in tasks | orderBy:'importance'" ng-if="i.done==true && i.deleted==false" ng-class="i.color" class="task">
+					<strike>{{i.text}}</strike>
+					<div class="buttons">
+					<button ng-click="done_task(i.id)" class="btn_return"> return</button>
+					<button ng-click="delete_task(i.id)" class="btn_delete"> delete</button>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
